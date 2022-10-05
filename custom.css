@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+}
+
+body {
+    background-color: #090e22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: rgb(0, 0, 0);
+}
+
+.hide {
+    display: none !important;
+}
+
+.titulocalc {
+    font-family: 'Lato', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+}
+
+
+.botaoiniciar {
+    font-family: "Lato", sans-serif;
+    position:relative;
+    text-align:center;
+    
+}
