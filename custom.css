@@ -1,35 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
-    font-weight: 700;
-}
-
-body {
+  }
+  
+  body {
     background-color: #090e22;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: rgb(0, 0, 0);
-}
-
-.hide {
+    color: #fff;
+  }
+  
+  .hide {
     display: none !important;
-}
-
-.titulocalc {
-    font-family: 'Lato', sans-serif;
+  }
+  
+  .container {
+    min-width: 500px;
+    min-height: 400px;
+    background-color: #1d1e33;
+    padding: 2rem;
+  }
+  
+  /* IMC Form */
+  #calc-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .form-control {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .form-control label {
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    color: #ccc;
+  }
+  
+  .form-control input {
+    padding: 1rem 0.5rem;
+  }
+  
+  .action-control {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+  
+  #calc-btn{
+    background-color: #008b13;
+    border-color: #ffffff;
+    border-style: groove;
+  }
+  
+  button {
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    border: none;
     color: rgb(255, 255, 255);
-    font-weight: 900;
-}
-
-
-.botaoiniciar {
-    font-family: "Lato", sans-serif;
-    position:relative;
-    text-align:center;
+    cursor: pointer;
+    opacity: 0.75;
+    flex: 1;
+    border-radius: 10px;
+  }
+  
+  button:hover {
+    opacity: 1;
+  }
+  
+  #clear-btn {
+    background-color: #444;
+    border-color: #ffffff;
+    border-style: groove;
     
-}
+  }
+  
+  /* Table */
+  
+  
+  #result-container {
+    text-align: justify;
+  }
+  
+  #nome-usuario {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  
+  #result-container h3 {
+    margin-top: 1rem;
+    color: #dfdfdf;
+  }
+  
+  #result-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .table-header {
+    font-weight: bold;
+    color: #ccc;
+  }
+  
+  
+  
+  #back-btn {
+    align-self: center;
+    background-color: #f44236;
+  }
+  
+  
+  

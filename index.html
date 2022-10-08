@@ -1,81 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Salário</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="custom.css" media="screen" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Salário Horista</title>
+    <link rel="stylesheet" href="custom.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"/>
-     
-</head>
-
-<body>
- 
-<div class="row">
-
-    <div class="botaoiniciar" id="botaoiniciar">
-            <h1 class="titulocalc" style="text-align: center">Calculadora de Salário e Hora Extra</h1>
-            <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#janelaModal">
-                Iniciar Calculadora
-            </button>   
-    </div>
-     <div id="calc-container">  
-        <!-- Modal -->
-        <div class="modal fade" id="janelaModal" tabindex="-1" aria-labelledby="janelaModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="janelaModalLabel">Preencha as informações abaixo:</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                    </div>
-                        <div class="modal-body">
-                            <form id="calc-form">
-                                <div class="mb-3">
-                                    <label for="nome" class="col-form-label">Nome Completo:</label>
-                                    <input type="text" maxlength="20" name="nome" class="form-control" id="nome" placeholder="Digite o nome completo">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="salarioHora" class="col-form-label">Salário-Hora:</label>
-                                    <input type="number" name="salarioHora" class="form-control" id="salarioHora" placeholder="Digite o valor de sua hora">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="quantidadeHoras" class="col-form-label">Jornada de trabalho mensal em horas (sem horas extras):</label>
-                                    <input type="number" name="quantidadeHoras" class="form-control" id="quantidadeHoras" placeholder="Digite a quantidade de horas trabalhadas no mês">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="quantidadeExtra" class="col-form-label">Quantidade de Horas Extras Realizadas:</label>
-                                    <input type="number" name="quantidadeExtra" class="form-control" id="quantidadeExtra" placeholder="Digite a quantidade de horas extras do mês">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-danger" id="btnfecha" data-bs-dismiss="modal">Fechar</button>
-                                    <button type="submit" class="btn btn-outline-success" id="btncalcular" >Calcular</button> 
-                                </div>
-                            </form>
-                        </div>
-                </div>
-            </div>
-        </div>
-     </div> 
-     <div id="result-container" class="hide">
-        <p id="salario-number">Seu salario é: <span></span></p>
-        <p id="vale-number">Seu salario é: <span></span></p>
-        <p id="extra-number">Seu salario é: <span></span></p>
-        <p id="pagamento-number">Seu salario é: <span></span></p>
-        
-        <h3>Confira as classificações</h3>
-        <button id="btnvoltar">Voltar</button>
-    </div>
-</div> 
-<div>teste bryan</div>
-</body>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      rel="stylesheet"
+    />
     <script src="calc_ex.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="calc-container">
+        <h2>Calculadora de Salário Horista</h2>
+        <form id="calc-form">
+          <div class="form-inputs">
+            <div class="form-control">
+              <label for="nome">Nome completo:</label>
+              <input
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="Digite seu nome completo"
+                
+              />
+            </div>
+            <div class="form-control">
+              <label for="salarioHora">Seu ganho por hora em R$:</label>
+              <input
+                type="text"
+                name="salarioHora"
+                id="salarioHora"
+                placeholder="Digite o valor da sua hora"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="quantidadeHoras">Total de horas trabalhadas no mês:</label>
+              <input
+                type="text"
+                name="quantidadeHoras"
+                id="quantidadeHoras"
+                placeholder="Digite o total de horas que você trabalha no mês"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="quantidadeExtra">Horas extras realizadas:</label>
+              <input
+                type="text"
+                name="quantidadeExtra"
+                id="quantidadeExtra"
+                placeholder="Digite a quantidade de horas extras feitas no mês"
+                required
+              />
+            </div>
+          </div>
+          <div class="action-control">
+            <button id="clear-btn">Limpar</button>
+            <button id="calc-btn">Calcular</button>
+          </div>
+        </form>
+      </div>
+      <div id="nomecontainer" class="hide">
+        <p id="nome-usuario"> <span></span></p><br><br>
+      </div>
+      <div id="result-container" class="hide">
+        <p id="pagamento-number">Você receberá no dia do seu pagamento: R$ <span></span></p><br>
+        <p id="salario-number">Seu salario mensal sem horas extras é: <span></span></p><br>
+        <p id="vale-number">Você receberá no vale: R$ <span></span></p><br>
+        <p id="extra-number">O total de suas horas extras é: R$ <span></span></p><br>
+        <br>
+        
+        <button id="back-btn">Voltar</button>
+      </div>
+    </div>
+  </body>
 </html>
