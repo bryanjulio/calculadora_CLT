@@ -96,6 +96,7 @@
     text-align: justify;
   }
   
+
   #nome-usuario {
     text-align: center;
     font-size: 1.6rem;
@@ -125,6 +126,57 @@
     align-self: center;
     background-color: #f44236;
   }
+
+/* teste
+
+
   
+  button {
+    position: relative;
+    padding: 1em 3em;
+    color: rgb(110, 237, 237);
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 0.5em rgb(110, 237, 237);
+    background-color: rgb(44, 157, 157);
+    border: 0.25em solid rgb(110, 237, 237);
+    border-radius: 1em;
+    box-shadow: 0 0 1em 0.25em rgb(110, 237, 237),
+      0 0 4em 1em rgba(65, 243, 243, 0.781),
+      inset 0 0 0.75em 0.25em rgb(110, 237, 237);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
   
+  button::after {
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(65, 243, 243, 0.781);
+    filter: blur(2em);
+    opacity: 0.7;
+    pointer-events: none;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+  }
+  
+  button:hover {
+    color: rgb(44, 157, 157);
+    background-color: rgb(110, 237, 237);
+    box-shadow: 0 0 1em 0.25em rgb(110, 237, 237),
+      0 0 4em 2em rgba(65, 243, 243, 0.781),
+      inset 0 0 0.75em 0.25em rgb(110, 237, 237);
+  }
+  
+  button:active {
+    box-shadow: 0 0 0.6em 0.25em rgb(110, 237, 237),
+      0 0 2.5em 2em rgba(65, 243, 243, 0.781),
+      inset 0 0 0.5em 0.25em rgb(110, 237, 237);
+  }
+
+  */
   
