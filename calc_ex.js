@@ -20,6 +20,10 @@ const valeNumber = document.querySelector("#vale-number span");
 const extraNumber = document.querySelector("#extra-number span");
 const pagamentoNumber = document.querySelector("#pagamento-number span");
 
+const salarioInput = document.querySelector("#salario-input span");
+const horasInput = document.querySelector("#horas-input span");
+const extraInput = document.querySelector("#extra-input span");
+
 const nomeUser = document.querySelector("#nome-usuario span")
 
 const backBtn = document.querySelector("#back-btn");
@@ -27,6 +31,7 @@ const backBtn = document.querySelector("#back-btn");
 
 
 // Funções
+
 function createTable(dados) {
     dados.innerText
 
@@ -100,11 +105,8 @@ function showOrHideResults() {
 }
 
 
-
 // Init
 createTable(dados);
-
-
 
 // Eventos
 [salarioHoraInput, quantidadeHorasInput, quantidadeExtraInput].forEach((el) => {
@@ -136,6 +138,7 @@ calcBtn.addEventListener("click", (e) => {
 
 
 
+
     // let info;
 
 
@@ -145,6 +148,12 @@ calcBtn.addEventListener("click", (e) => {
     valeNumber.innerHTML = resultadoVale;
     extraNumber.innerHTML = resultadoTotalExtra;
     pagamentoNumber.innerHTML = resultadoPagamento;
+
+    salarioInput.innerHTML = salarioHoraInput.value;
+    horasInput.innerHTML = quantidadeHorasInput.value;
+    extraInput.innerHTML = quantidadeExtraInput.value;
+
+
 
 
 
@@ -162,4 +171,3 @@ backBtn.addEventListener("click", (e) => {
     cleanInputs();
     showOrHideResults();
 });
-gdfg
