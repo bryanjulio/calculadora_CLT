@@ -1,0 +1,29 @@
+1- botão enter agora chama o cáclulo
+2- agora no resultado exibe os valores inseridos nos input
+3- INput nome não recebe mais numero
+
+
+
+
+
+
+
+[Tecla enter seleciona input debaixo até todos serem preenchidos, mas corta função do botão calcular e o verificador de digitos]
+⇣⇣⇣⇣⇣⇣⇣⇣Codigo javascript⇣⇣⇣⇣⇣⇣⇣
+
+$('body').on('keydown', 'input, select', function(e) {
+    if (e.key === "Enter" && e.target && ['BUTTON','SUBMIT'].indexOf(e.target.tagName) === -1) {
+        var self = $(this), form = self.parents('form:eq(0)'), focusable, next;
+        focusable = form.find('input,a,select,button,textarea').filter(':visible');
+        next = focusable.eq(focusable.index(this)+1);
+        if (next.length) {
+            next.focus();
+        } else {
+            form.submit();
+        }
+        return false;
+    }
+});
+
+
+
