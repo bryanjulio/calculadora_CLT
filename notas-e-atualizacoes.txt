@@ -8,6 +8,9 @@
 
 
 
+
+
+
 [Tecla enter seleciona input debaixo até todos serem preenchidos, mas corta função do botão calcular e o verificador de digitos]
 ⇣⇣⇣⇣⇣⇣⇣⇣Codigo javascript⇣⇣⇣⇣⇣⇣⇣
 
