@@ -32,6 +32,8 @@ const backBtn = document.querySelector("#back-btn");
 
 // Funções
 
+
+
 function createTable(dados) {
     dados.innerText
 
@@ -108,7 +110,19 @@ function showOrHideResults() {
 // Init
 createTable(dados);
 
+
+
 // Eventos
+
+document.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter" ){
+        
+        calcBtn.click();
+    }
+});
+
+
 [salarioHoraInput, quantidadeHorasInput, quantidadeExtraInput].forEach((el) => {
     el.addEventListener("input", (e) => {
         const updatedValue = validDigits(e.target.value);

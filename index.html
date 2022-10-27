@@ -1,86 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora de Salário Horista</title>
-    <link rel="stylesheet" href="custom.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="calc_ex.js" defer></script>
-  </head>
-  <body>
-    <div class="container">
-      <div id="calc-container">
-        <h2>Calculadora de Salário Horista</h2>
-        <form id="calc-form">
-          <div class="form-inputs">
-            <div class="form-control">
-              <label for="nome">Nome completo:</label>
-              <input
-                type="text"
-                name="nome"
-                id="nome"
-                placeholder="Digite seu nome completo"
-                
-              />
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculadora de Salário Horista</title>
+        <link rel="stylesheet" href="custom.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet" />
+        <script src="calc_ex.js" defer></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div id="calc-container">
+                <h2>Calculadora de Salário Horista</h2>
+                <form id="calc-form">
+                    <div class="form-inputs">
+                        <div class="form-control">
+                            <label for="nome">Nome completo:</label>
+                            <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" />
+                        </div>
+                        <div class="form-control">
+                            <label for="salarioHora">Seu ganho por hora em R$:</label>
+                            <input type="text" name="salarioHora" id="salarioHora"
+                                placeholder="Digite o valor da sua hora" required />
+                        </div>
+                        <div class="form-control">
+                            <label for="quantidadeHoras">Total de horas trabalhadas no mês:</label>
+                            <input type="text" name="quantidadeHoras" id="quantidadeHoras"
+                                placeholder="Digite o total de horas que você trabalha no mês" required />
+                        </div>
+                        <div class="form-control">
+                            <label for="quantidadeExtra">Horas extras realizadas:</label>
+                            <input type="text" name="quantidadeExtra" id="quantidadeExtra"
+                                placeholder="Digite a quantidade de horas extras feitas no mês" required />
+                        </div>
+                    </div>
+                    <div class="action-control">
+                        <button id="clear-btn">Limpar</button>
+                        <button id="calc-btn">Calcular</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-control">
-              <label for="salarioHora">Seu ganho por hora em R$:</label>
-              <input
-                type="text"
-                name="salarioHora"
-                id="salarioHora"
-                placeholder="Digite o valor da sua hora"
-                required
-              />
+            <div id="nomecontainer" class="hide">
+                <p id="nome-usuario"> <span></span></p><br>
             </div>
-            <div class="form-control">
-              <label for="quantidadeHoras">Total de horas trabalhadas no mês:</label>
-              <input
-                type="text"
-                name="quantidadeHoras"
-                id="quantidadeHoras"
-                placeholder="Digite o total de horas que você trabalha no mês"
-                required
-              />
+            <hr class="hide">
+            <div id="result-container" class="hide">
+                <p id="salario-number">Salário bruto: <span></span></p><br>
+                <p id="pagamento-number">Você receberá no dia do seu pagamento: R$ <span></span></p><br>
+                <p id="vale-number">Você receberá no vale: R$ <span></span></p><br>
+                <p id="extra-number">O total de suas horas extras é: R$ <span></span></p><br>
+                <br>
+                <br>
+                <p id="salario-input"> Valor de sua Hora <span></span></p><br>
+                <p id="horas-input">Horas trabalhadas no mes <span></span></p><br>
+                <p id="extra-input">horas extras realizadas no mês<span></span></p><br>
+
+                <button id="back-btn">Voltar</button>
             </div>
-            <div class="form-control">
-              <label for="quantidadeExtra">Horas extras realizadas:</label>
-              <input
-                type="text"
-                name="quantidadeExtra"
-                id="quantidadeExtra"
-                placeholder="Digite a quantidade de horas extras feitas no mês"
-                required
-              />
-            </div>
-          </div>
-          <div class="action-control">
-            <button id="clear-btn">Limpar</button>
-            <button id="calc-btn">Calcular</button>
-          </div>
-        </form>
-      </div>
-      <div id="nomecontainer" class="hide">
-        <p id="nome-usuario"> <span></span></p><br>
-      </div>
-      <hr class="hide">
-      <div id="result-container" class="hide">
-        <p id="salario-number">Salário bruto: <span></span></p><br>
-        <p id="pagamento-number">Você receberá no dia do seu pagamento: R$ <span></span></p><br>
-        <p id="vale-number">Você receberá no vale: R$ <span></span></p><br>
-        <p id="extra-number">O total de suas horas extras é: R$ <span></span></p><br>
-        <br>
-        <br>
-        <button id="back-btn">Voltar</button>
-      </div>
-    </div>
-    <div></div>
-  </body>
+        </div>
+    </body>
+
 </html>
