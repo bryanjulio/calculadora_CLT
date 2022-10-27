@@ -124,75 +124,70 @@ nomeInput.addEventListener("keypress", function (e) {
 
 
 
+document.addEventListener("keypress", function (e) {
 
-    document.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
 
-        if (e.key === "Enter") {
+        calcBtn.click();
+    }
+});
 
-            calcBtn.click();
-        }
+
+
+[salarioHoraInput, quantidadeHorasInput, quantidadeExtraInput].forEach((el) => {
+    el.addEventListener("input", (e) => {
+        const updatedValue = validDigits(e.target.value);
+
+        e.target.value = updatedValue;
     });
+});
 
+calcBtn.addEventListener("click", (e) => {
+    e.preventDefault();
 
-    [salarioHoraInput, quantidadeHorasInput, quantidadeExtraInput].forEach((el) => {
-        el.addEventListener("input", (e) => {
-            const updatedValue = validDigits(e.target.value);
+    const nome = nomeInput.value;
+    const salarioHora = salarioHoraInput.value.replace(",", ".");
+    const quantidadeHoras = quantidadeHorasInput.value.replace(",", ".");
+    const quantidadeExtra = quantidadeExtraInput.value.replace(",", ".");
 
-            e.target.value = updatedValue;
-        });
-    });
+    console.log(nome, salarioHora, quantidadeHoras, quantidadeExtra);
 
-    calcBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        const nome = nomeInput.value;
-        const salarioHora = salarioHoraInput.value.replace(",", ".");
-        const quantidadeHoras = quantidadeHorasInput.value.replace(",", ".");
-        const quantidadeExtra = quantidadeExtraInput.value.replace(",", ".");
-
-        console.log(nome, salarioHora, quantidadeHoras, quantidadeExtra);
-
-        if (!salarioHora || !quantidadeHoras || !quantidadeExtra) return;
+    if (!salarioHora || !quantidadeHoras || !quantidadeExtra) return;
 
 
 
-        const resultadoSalario = calcSalario(salarioHora, quantidadeHoras);
-        const resultadoVale = calcVale(salarioHora, quantidadeHoras);
-        const resultadoTotalExtra = calcTotalExtra(salarioHora, quantidadeExtra);
-        const resultadoPagamento = calcPagamento(salarioHora, quantidadeHoras, quantidadeExtra);
+    const resultadoSalario = calcSalario(salarioHora, quantidadeHoras);
+    const resultadoVale = calcVale(salarioHora, quantidadeHoras);
+    const resultadoTotalExtra = calcTotalExtra(salarioHora, quantidadeExtra);
+    const resultadoPagamento = calcPagamento(salarioHora, quantidadeHoras, quantidadeExtra);
 
 
 
 
-        // let info;
+    nomeUser.innerText = (`Olá ${nome}!`);
+    salarioNumber.innerHTML = resultadoSalario;
+    valeNumber.innerHTML = resultadoVale;
+    extraNumber.innerHTML = resultadoTotalExtra;
+    pagamentoNumber.innerHTML = resultadoPagamento;
+
+    salarioInput.innerHTML = salarioHoraInput.value;
+    horasInput.innerHTML = quantidadeHorasInput.value;
+    extraInput.innerHTML = quantidadeExtraInput.value;
 
 
+    showOrHideResults();
 
-        nomeUser.innerText = (`Olá ${nome}!`);
-        salarioNumber.innerHTML = resultadoSalario;
-        valeNumber.innerHTML = resultadoVale;
-        extraNumber.innerHTML = resultadoTotalExtra;
-        pagamentoNumber.innerHTML = resultadoPagamento;
-
-        salarioInput.innerHTML = salarioHoraInput.value;
-        horasInput.innerHTML = quantidadeHorasInput.value;
-        extraInput.innerHTML = quantidadeExtraInput.value;
+});
 
 
+clearBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    cleanInputs();
+});
 
 
-
-
-        showOrHideResults();
-    });
-
-    clearBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        cleanInputs();
-    });
-
-    backBtn.addEventListener("click", (e) => {
-        cleanInputs();
-        showOrHideResults();
-    })
+backBtn.addEventListener("click", (e) => {
+    cleanInputs();
+    showOrHideResults();
+});
