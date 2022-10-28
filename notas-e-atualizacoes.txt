@@ -4,7 +4,11 @@
 
 
 
+ADICIONAR:
 
+            Salário bruto sem descontos
+            descontos
+            separar string dos numeros 
 
 
 
