@@ -192,4 +192,3 @@ backBtn.addEventListener("click", (e) => {
     showOrHideResults();
 });
 
-//function teste 
