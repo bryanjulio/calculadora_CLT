@@ -19,6 +19,7 @@ const salarioNumber = document.querySelector("#salario-number span");
 const valeNumber = document.querySelector("#vale-number span");
 const extraNumber = document.querySelector("#extra-number span");
 const pagamentoNumber = document.querySelector("#pagamento-number span");
+const salarioBrutoNumber = document.querySelector("#salario-bruto")
 
 const salarioInput = document.querySelector("#salario-input span");
 const horasInput = document.querySelector("#horas-input span");
@@ -48,6 +49,14 @@ function calcSalario(salarioHora, quantidadeHoras) {
 
     return (salario);
 }
+
+//function calcBruto(salarioHora, quantidadeHoras) {
+  //  const salarioBruto = (salarioHora * quantidadeHoras + totalExtra).toFixed(2);
+
+  //  return (salarioBruto);
+   
+//}
+
 
 function calcVale(salarioHora, quantidadeHoras) {
     const salario = salarioHora * quantidadeHoras;
@@ -87,6 +96,7 @@ function calcPagamento(salarioHora, quantidadeHoras, quantidadeExtra) {
 }
 
 
+
 function cleanInputs() {
     nomeInput.value = "";
     salarioHoraInput.value = "";
@@ -97,6 +107,7 @@ function cleanInputs() {
     extraNumber.className = "";
     pagamentoNumber.className = "";
     nomeUser.className = "";
+    salarioBrutoNumber.className = "";
 
 }
 

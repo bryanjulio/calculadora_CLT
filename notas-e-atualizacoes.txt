@@ -10,6 +10,8 @@ ADICIONAR:
             descontos
             separar string dos numeros 
 
+            colocar horas Adicionais
+
 
 
 
