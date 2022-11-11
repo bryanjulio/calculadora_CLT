@@ -191,3 +191,4 @@ backBtn.addEventListener("click", (e) => {
     cleanInputs();
     showOrHideResults();
 });
+console.log;
