@@ -127,13 +127,55 @@ button:hover {
     align-self: center;
     background-color: #f73a2d;
     position: absolute; top: 590px;
-    min-width: 660px;
+    min-width: 580px;
     
 }
 
 .salarioInput {
     text-align: right;
 }
+
+#salario-number{
+    margin-top:-19px;
+    margin-left: 440px;
+}
+#extra-number{
+    margin-top:-19px;
+    margin-left: 435px;
+}
+#pagamento-number{
+    margin-top:-19px;
+    margin-left: 450px;
+}
+#vale-number{
+    margin-top:-19px;
+    margin-left: 449px;
+}
+
+#salario-input{
+    margin-top: -19px;
+    margin-left: 450px;
+}
+#horas-input{
+    margin-top: -19px;
+    margin-left: 459px;
+}
+#extra-input{
+    margin-top: -19px;
+    margin-left: 460px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* teste
 
