@@ -126,7 +126,7 @@ button:hover {
 #back-btn {
     align-self: center;
     background-color: #f73a2d;
-    position: absolute; top: 590px;
+    position: relative; top: 100px;
     min-width: 580px;
     
 }
