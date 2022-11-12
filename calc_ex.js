@@ -50,12 +50,13 @@ function calcSalario(salarioHora, quantidadeHoras) {
     return (salario);
 }
 
-//function calcBruto(salarioHora, quantidadeHoras) {
-  //  const salarioBruto = (salarioHora * quantidadeHoras + totalExtra).toFixed(2);
+function calcBruto(salarioHora, quantidadeHoras, quantidadeExtra) {
+    const totalExtra = salarioHora * quantidadeExtra;
+    const salarioBruto = (salarioHora * quantidadeHoras + totalExtra).toFixed(2);
 
-  //  return (salarioBruto);
+    return (salarioBruto);
    
-//}
+}
 
 
 function calcVale(salarioHora, quantidadeHoras) {
@@ -90,7 +91,7 @@ function calcPagamento(salarioHora, quantidadeHoras, quantidadeExtra) {
     }
 
 
-    const pagamento = (salario * (60 / 100) + totalExtra - descontoInss).toFixed(2);
+    const pagamento = (salario + totalExtra - descontoInss).toFixed(2);
 
     return (pagamento);
 }
@@ -102,12 +103,12 @@ function cleanInputs() {
     salarioHoraInput.value = "";
     quantidadeHorasInput.value = "";
     quantidadeExtraInput.value = "";
-    salarioNumber.className = "";
-    valeNumber.className = "";
+    //salarioNumber.className = "";
+    //valeNumber.className = "";
     extraNumber.className = "";
     pagamentoNumber.className = "";
     nomeUser.className = "";
-    salarioBrutoNumber.className = "";
+    
 
 }
 
@@ -171,15 +172,17 @@ calcBtn.addEventListener("click", (e) => {
     const resultadoVale = calcVale(salarioHora, quantidadeHoras);
     const resultadoTotalExtra = calcTotalExtra(salarioHora, quantidadeExtra);
     const resultadoPagamento = calcPagamento(salarioHora, quantidadeHoras, quantidadeExtra);
+    const resultadoBruto = calcBruto(salarioHora, quantidadeHoras, quantidadeExtra);
 
 
 
 
     nomeUser.innerText = (`Olá ${nome}!`);
-    salarioNumber.innerHTML = resultadoSalario;
-    valeNumber.innerHTML = resultadoVale;
-    extraNumber.innerHTML = resultadoTotalExtra;
-    pagamentoNumber.innerHTML = resultadoPagamento;
+    // salarioNumber.innerHTML = resultadoSalario;
+    //valeNumber.innerHTML = resultadoVale;
+    extraNumber.innerHTML = resultadoTotalExtra.replace(".", ",");
+    pagamentoNumber.innerHTML = resultadoPagamento.replace(".", ",");
+    salarioBrutoNumber.innerHTML = resultadoBruto.replace(".", ",");
 
     salarioInput.innerHTML = salarioHoraInput.value;
     horasInput.innerHTML = quantidadeHorasInput.value;
