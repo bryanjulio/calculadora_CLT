@@ -52,7 +52,6 @@
             </div>
             <hr class="hide">
             <div id="result-container" class="hide">
-
                 <!-- SALÁRIO SEM ACRESCIMO OU DESCONTO: R$<p id="salario-number">    <span></span></p><br> -->
                 SALÁRIO LÍQUIDO R$<p id="pagamento-number"> <span></span></p><br>
                 SALÁRIO BRUTO: R$<p id="salario-bruto"> <span></span></p><br>
@@ -70,32 +69,56 @@
                 <h1 style="text-align: center;">Tabela descontos INSS</h1>
 
                 <table>
-                    <tr>
-                        <th>Salário (de)</th>
-                        <th>Salário (ate)</th>
-                        <th>Aliquota</th>
-                    </tr>
-                    <tr>
-                        <td>0.00</td>
-                        <td>1.212,01</td>
-                        <td>7.5%</td>
-                    </tr>
-                    <tr>
-                        <td>1.212,00</td>
-                        <td>2.427,35</td>
-                        <td>9,0%</td>
-                    </tr>
-                    <tr>
-                        <td>2.427,36</td>
-                        <td>3.641,03</td>
-                        <td>12,0%</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-corpo">
+                        <!-- Os dados da tabela serão preenchidos aqui -->
+                    </tbody>
                 </table>
-
                 <button id="back-btn">Voltar</button>
             </div>
         </div>
+
+
     </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'scraping.php', // Substitua pelo caminho correto
+                dataType: 'json',
+                success: function (data) {
+                    // Limpa o corpo da tabela
+                    $('#tabela-corpo').empty();
+
+                    // Loop para adicionar os dados à tabela
+                    $.each(data, function (index, row) {
+                        var valores = row.valores;
+                        var aliquota = row.aliquota;
+
+                        // Cria uma nova linha na tabela
+                        var newRow = '<tr><td>' + valores + '</td><td';
+
+                        if (index >= 1) {
+                            newRow += ' class="aliquota-align-right"';
+                        }
+
+                        newRow += '>' + aliquota + '</td></tr>';
+
+                        // Adiciona a linha à tabela
+                        $('#tabela-corpo').append(newRow);
+                    });
+                }
+            });
+        });
+
+    </script>
+
+
+
 
 </html>

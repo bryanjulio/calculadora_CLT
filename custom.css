@@ -23,6 +23,7 @@ body {
     min-height: 400px;
     background-color: #142050;
     padding: 2rem;
+    padding-bottom: 18px;
     border-radius: 30px;
 }
 
@@ -36,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
 }
 
 .form-control {
@@ -126,54 +127,79 @@ button:hover {
 #back-btn {
     align-self: center;
     background-color: #f73a2d;
-    position: relative; top: 100px;
+    margin-top: 10px;
+    top: 100px;
     min-width: 580px;
-    
+
 }
 
 .salarioInput {
     text-align: right;
 }
 
-#salario-number{
-    margin-top:-19px;
-    margin-left: 440px;
-}
-
-#salario-bruto{
-    margin-top:-19px;
-    margin-left: 440px;
-}
-
-#extra-number{
-    margin-top:-19px;
-    margin-left: 440px;
-}
-#pagamento-number{
-    margin-top:-19px;
-    margin-left: 440px;
-}
-#vale-number{
-    margin-top:-19px;
-    margin-left: 440px;
-}
-
-#salario-input{
+#salario-number {
     margin-top: -19px;
-    margin-left: 435px;
+    margin-left: 440px;
 }
-#horas-input{
+
+#salario-bruto {
     margin-top: -19px;
-    margin-left: 435px;
+    margin-left: 440px;
 }
-#extra-input{
+
+#extra-number {
+    margin-top: -19px;
+    margin-left: 440px;
+}
+
+#pagamento-number {
+    margin-top: -19px;
+    margin-left: 440px;
+}
+
+#vale-number {
+    margin-top: -19px;
+    margin-left: 440px;
+}
+
+#salario-input {
     margin-top: -19px;
     margin-left: 435px;
 }
 
+#horas-input {
+    margin-top: -19px;
+    margin-left: 435px;
+}
+
+#extra-input {
+    margin-top: -19px;
+    margin-left: 435px;
+}
 
 
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+tr:nth-child(even) {
+    background-color: #304597;
+}
+
+.aliquota-align-right {
+    text-align: right;
+}
 
 
 /* teste

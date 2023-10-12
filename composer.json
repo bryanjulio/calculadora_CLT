@@ -1,0 +1,18 @@
+{
+    "name": "bryan/calculadora_clt",
+    "autoload": {
+        "psr-4": {
+            "Bryan\\CalculadoraClt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bryan Julio",
+            "email": "bryan.19julio@gmail.com"
+        }
+    ],
+    "require": {
+         "sunra/php-simple-html-dom-parser": "v1.5.0",
+        "fabpot/goutte": "^4.0"
+    }
+}
