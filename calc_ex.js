@@ -74,24 +74,31 @@ $(document).ready(function () {
 
 				salario = parseFloat(salario);
 
+				// Verificar se o salário é menor que o limite superior da primeira faixa
+				const primeiroLimiteSuperior = parseFloat(formattedData[1].valores);
+
 				let descontoInss = 0;
-				for (let i = 1; i < formattedData.length; i++) {
-					const limiteSuperior = parseFloat(formattedData[i].valores);
-					
-                    const aliquota =
-						parseFloat(formattedData[i].aliquota.replace(",", ".").replace("%", "")) /
-						100;
-                    console.log(salario);
-					console.log(aliquota);
-					console.log(limiteSuperior);
-					if (salario <= limiteSuperior) {
-						descontoInss = salario * aliquota;
-						break; // Pare a iteração quando encontrar a alíquota adequada.
-					}else{
-                         descontoInss = 0;
-                    }
+
+				if (salario <= primeiroLimiteSuperior) {
+					descontoInss = 0;
+				} else {
+					for (let i = 1; i < formattedData.length; i++) {
+						const limiteSuperior = parseFloat(formattedData[i].valores);
+						const aliquota =
+							parseFloat(
+								formattedData[i].aliquota.replace(",", ".").replace("%", "")
+							) / 100;
+
+						if (salario <= limiteSuperior) {
+							descontoInss = salario * aliquota;
+							break;
+						}
+					}
 				}
-                 console.log(descontoInss);
+
+				console.log(descontoInss);
+
+				console.log(descontoInss);
 				const resultadoPagamento = (
 					salario +
 					salarioHora * quantidadeExtra -
