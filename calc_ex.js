@@ -82,6 +82,9 @@ $(document).ready(function () {
 				if (salario <= primeiroLimiteSuperior) {
 					descontoInss = 0;
 				} else {
+					let ultimaAliquota = 0; // Inicializamos a última alíquota como 0
+					let ultimoLimiteSuperior = 0; // Inicializamos o último limite superior como 0
+
 					for (let i = 1; i < formattedData.length; i++) {
 						const limiteSuperior = parseFloat(formattedData[i].valores);
 						const aliquota =
@@ -92,13 +95,19 @@ $(document).ready(function () {
 						if (salario <= limiteSuperior) {
 							descontoInss = salario * aliquota;
 							break;
+						} else {
+							ultimaAliquota = aliquota;
+							ultimoLimiteSuperior = limiteSuperior;
 						}
+					}
+
+					if (descontoInss === 0 && salario > ultimoLimiteSuperior) {
+						// Se o desconto ainda for 0 e o salário for maior que o último limite,
+						// calculamos o desconto usando a última alíquota.
+						descontoInss = salario * ultimaAliquota;
 					}
 				}
 
-				console.log(descontoInss);
-
-				console.log(descontoInss);
 				const resultadoPagamento = (
 					salario +
 					salarioHora * quantidadeExtra -
